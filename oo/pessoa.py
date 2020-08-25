@@ -1,5 +1,7 @@
 class Pessoa:
+    olhos=2 #atributo default ou atributo de calsse
     def __init__(self, *filhos, nome=None, idade = 42):
+
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
@@ -18,7 +20,12 @@ if __name__ == '__main__':
         print(filho.nome,filho.idade)
     luciano.sobrenome = 'Serra' #atributo dinâmico
     del  luciano.filhos #removendo um atributo dinamicamente
+    luciano.olhos = 1
+    del luciano.olhos
     print(luciano.__dict__) # confere quais os atributos de instancia do objeto
     print(Vladimir.__dict__)
-
-
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(luciano.olhos)
+    print(Vladimir.olhos)
+    print(id(Pessoa.olhos), id(luciano.olhos), id(Vladimir.olhos))
