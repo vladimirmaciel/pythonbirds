@@ -16,6 +16,9 @@ if __name__ == '__main__':
     print(luciano.idade)
     for filho in luciano.filhos:
         print(filho.nome,filho.idade)
-    # print(luciano.filhos)
+    luciano.sobrenome = 'Serra' #atributo dinâmico
+    del  luciano.filhos #removendo um atributo dinamicamente
+    print(luciano.__dict__) # confere quais os atributos de instancia do objeto
+    print(Vladimir.__dict__)
 
 
