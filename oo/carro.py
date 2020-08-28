@@ -92,6 +92,27 @@ Exemplo:
     >>> carro.calcular_direcao()
     'Oeste'
 """
+class Carro:
+    #recebe dois parametros, são os dois objetos da composição
+    def __init__(self,direcao,motor): # ALT + ENTER para cirar a atribuição dos campos sem precisar digitar
+        self.motor = motor
+        self.direcao = direcao
+
+    def calcular_velocidade(self): #composição delega a funcionalidade para classe Motor
+        return self.motor.velocidade
+    def acelerar(self):
+        return  self.motor.acelerar()
+    def frear(self):
+        return self.motor.frear()
+    def calcular_direcao(self):
+        return self.direcao.valor
+    def girar_a_direita(self):
+        return self.direcao.girar_a_direita()
+    def girar_a_esquerda(self):
+        return self.direcao.girar_a_esquerda()
+
+
+
 NORTE = 'Norte'
 SUL = 'Sul'
 LESTE = 'Leste'
@@ -100,9 +121,9 @@ OESTE = 'Oeste'
 
 class Motor:
     def __init__(self):
-        self.velocidade = 0
+        self.velocidade = 0 #atributo de objetos são criados no método mágico __init__
 
-    def acelerar(self):
+    def acelerar(self):     #tipo de atibuto método, um função da classe que está atralado a um objeto
         self.velocidade += 1
 
     def frear(self):
