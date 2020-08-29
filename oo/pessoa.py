@@ -16,9 +16,10 @@ class Pessoa:
 
 class Homem(Pessoa):
     #sobrescrita de atributos
+    olhos = 2
     pass
 class Mutante(Pessoa):
-     Pessoa.olhos = 3 #sobrescrevendo a Classe Pessoa modificando o atributo olhos para 3
+     olhos = 3 #sobrescrevendo a Classe Pessoa modificando o atributo olhos para 3
 
 if __name__ == '__main__':
     Vladimir = Mutante(nome='Vladimir', idade=25)
