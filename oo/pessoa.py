@@ -15,10 +15,13 @@ class Pessoa:
         return f'{cls} - olhos{cls.olhos}'
 
 class Homem(Pessoa):
+    #sobrescrita de atributos
     pass
+class Mutante(Pessoa):
+     Pessoa.olhos = 3 #sobrescrevendo a Classe Pessoa modificando o atributo olhos para 3
 
 if __name__ == '__main__':
-    Vladimir = Homem(nome='Vladimir', idade=25)
+    Vladimir = Mutante(nome='Vladimir', idade=25)
     luciano = Homem(Vladimir, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
@@ -33,7 +36,7 @@ if __name__ == '__main__':
     del luciano.olhos
     print(luciano.__dict__) # confere quais os atributos de instancia do objeto
     print(Vladimir.__dict__)
-    Pessoa.olhos = 3
+    # Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(luciano.olhos)
     print(Vladimir.olhos)
@@ -46,3 +49,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(Vladimir, Pessoa))
     print(isinstance(Vladimir, Homem))
+    print(Vladimir.olhos)
